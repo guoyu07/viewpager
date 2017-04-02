@@ -1,0 +1,29 @@
+.viewpager-container {
+    position: absolute;
+    height:100%;
+    list-style: none;
+    transform:translateX(0px) translateZ(0);
+    -ms-transform:translateX(0px) translateZ(0); 	/* IE 9 */
+    -moz-transform:translateX(0px) translateZ(0); 	/* Firefox */
+    -webkit-transform:translateX(0px) translateZ(0); /* Safari 和 Chrome */
+    -o-transform:translateX(0px) translateZ(0); 	/* Opera */
+}
+
+.viewpager-page {
+    height:100%;
+    float:left;
+}
+
+.viewpage-scroll-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.switchTrans
+{
+    transition: transform 0.6s ease;
+    -moz-transition: transform 0.6s ease; /* Firefox 4 */
+    -webkit-transition: transform 0.6s ease; /* Safari 和 Chrome */
+    -o-transition: transform 0.6s ease; /* Opera */
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="pullToRefresh/iscroll.js"></script>
+    <script src="pullToRefresh/pullToRefresh.js"></script>
+    <link rel='stylesheet' type='text/css' href = 'pullToRefresh/pullToRefresh.css'>
+
+    <link rel='stylesheet' type='text/css' href = 'viewpager.css'>
+    <script src="viewpager.js"></script>
+
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        html {
+            height:100%;
+        }
+        body {
+            height:100%;
+        }
+        #container {
+            position:relative;
+            overflow: hidden;
+            height:100%;
+            width: 100%;
+        }
+        .page-1 {
+            background-color: lightskyblue;
+        }
+        .page-2 {
+            background-color: darkseagreen;
+        }
+        .page-3 {
+            background-color: floralwhite;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            // 有的浏览器拖拽会移动页面或者自带下拉刷新功能, 需要为document禁止默认行为
+            $(document).on("touchmove", function(event){
+                event.preventDefault();
+            });
+
+            var viewPager = $.installViewpager("#container");
+
+            viewPager.transToPage(1);
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 窗口 -->
+    <div id="container">
+        <!-- 滑动多页 -->
+        <ul>
+            <!-- 单页 -->
+            <li class="page-1">
+                <!-- 滚动区 -->
+                <div>
+                    <!-- 内容区 -->
+                    <div>page-1</div>
+                </div>
+            </li>
+            <li class="page-2">
+                <div>
+                    <div>page-2</div>
+                </div>
+            </li>
+            <li class="page-3">
+                <div>
+                    <div>page-3</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
